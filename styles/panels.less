@@ -17,14 +17,6 @@ atom-panel {
 }
 
 atom-panel-container {
-  &.left:not(:empty) {
-    border-right: 1px solid @tool-panel-border-color;
-  }
-
-  &.right:not(:empty) {
-    border-left: 1px solid @tool-panel-border-color;
-  }
-
   &.bottom {
     margin-top: 2px;
     border-top: 1px solid @tool-panel-border-color;
@@ -33,10 +25,13 @@ atom-panel-container {
 }
 
 atom-pane-container atom-pane .item-views,
-atom-panel-container,
 .pane-item {
   background: @app-background-color !important;
   border: 0;
+}
+
+atom-panel-container {
+    background: @theme-background-color-dark;
 }
 
 .focusable-panel,

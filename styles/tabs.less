@@ -2,14 +2,10 @@
 @import "ui-mixins.less";
 @import "octicon-mixins";
 
-
 .tab-bar {
   background: @tab-bar-background-color;
   width: 100%;
   height: @tab-height;
-  // @media (min-width: 800px) {
-  //   height: @tab-height/2;
-  // }
   padding: 0;
   display: table;
   table-layout: fixed;
@@ -25,18 +21,16 @@
     height: @tab-height;
     line-height: @tab-height;
     box-sizing: border-box;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid @tab-border-color;
+    border: 0;
     padding-left: 20px !important;
     padding-right: 20px !important;
     position: relative;
     transition: color @transition-time ease, border @transition-time ease, background @transition-time ease;
 
-    .status-modified,
+
     .status-added,
-    .status-ignored {
+    .status-ignored,
+    .status-modified {
       transition: color @transition-time ease, background @transition-time ease;
 
       &:hover {
@@ -55,7 +49,6 @@
     &:hover {
       color: @text-color-highlight;
       background: @tab-background-color-hover;
-      border: 1px solid @base-border-color;
 
       .close-icon {
         display: block;
@@ -68,22 +61,10 @@
     color: @text-color-selected;
     background: @tab-background-color-active;
     width: 100%;
-    border-top: 1px solid @base-border-color;
-    border-bottom: 1px solid transparent;
-    border-left: 1px solid @base-border-color;
-    border-right: 1px solid @base-border-color;
 
     & .title {
       color: @text-color-selected;
       padding: 0;
-    }
-
-    &:first-child {
-      border-left: 0;
-    }
-
-    &:last-child {
-      border-right: 0;
     }
 
     .status-modified {
@@ -124,7 +105,7 @@
   .tab.modified:not(:hover) .close-icon {
     opacity: 1;
     transform: scale(1);
-    top: 12px;
+    top: (@tab-height - 6) / 2;
     right: 8px;
     display: inline-block;
     border-color: @background-color-warning;
@@ -139,7 +120,6 @@
       color: @text-color-highlight;
     }
   }
-
 
   .tab .close-icon {
     top: (@tab-height - 16) / 2;
@@ -181,12 +161,10 @@
   }
 
   .tab.modified:not(:hover) .close-icon {
-    top: 12px !important;
     left: 8px !important;
     right: auto !important;
   }
 }
-
 @media (max-width: 1280px), (max-height: 800px) {
   .tab-bar {
     height: @tab-height * 0.8;
@@ -194,6 +172,14 @@
     .tab {
       height: @tab-height * 0.8;
       line-height: @tab-height * 0.8;
+
+      &.modified:not(:hover) .close-icon {
+        top: ((@tab-height * 0.8) - 6) / 2;
+      }
+
+      .close-icon {
+        top: ((@tab-height * 0.8) - 16) / 2;
+      }
     }
   }
 }

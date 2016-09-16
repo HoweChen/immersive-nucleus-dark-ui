@@ -22,7 +22,8 @@
 @theme-syntax-gutter-background-color: @theme-background-color;
 @theme-syntax-gutter-background-color-selected: fade(@theme-background-color-light, 10%); // Main colors -----------------------------------------------------------------
 @base-background-color: @theme-background-color;
-@base-border-color: @theme-background-color; // Background colors -----------------------------------------------------------
+@base-border-color: @theme-background-color; //@base-border-color:     @theme-background-color-light;
+// Background colors -----------------------------------------------------------
 @background-color-highlight: @theme-background-color-light;
 @background-color-selected: @theme-background-color-light;
 @background-color-info: @theme-blue;
@@ -74,7 +75,7 @@
 @button-background-color-selected: @input-border-color;
 @button-border-color: @input-border-color;
 @tab-bar-background-color: @app-background-color;
-@tab-bar-border-color: @base-border-color;
+@tab-bar-border-color: @base-border-color; // @tab-background-color: @tool-panel-background-color;
 @tab-background-color: @app-background-color;
 @tab-background-color-active: @app-background-color;
 @tab-background-color-hover: @base-border-color;
@@ -83,7 +84,7 @@
 @tooltip-background-color: @text-color;
 @tooltip-key-text-color: @background-color-info; //@base-background-color;
 @tooltip-key-background-color: @base-background-color; //@background-color-info;
-@tree-view-background-color: @theme-background-color;
+@tree-view-background-color: @theme-background-color; // @tree-view-background-color: @tool-panel-background-color;
 @tree-view-border-color: @base-border-color;
 @progress-background-color: @background-color-info;
 @markdown-preview-color: @syntax-text-color;
