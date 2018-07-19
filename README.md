@@ -1,4 +1,4 @@
-# Immersive Nucleus Dark UI
+# Immersive Nucleus Dark UI – Deprecated
 
 Nucleus is an adaptable UI theme for Atom with your favorite syntax coloring at its core! This gives the UI a coherent feel, with whatever syntax theme you like to use.
 
